@@ -1,9 +1,13 @@
 import {Paper} from '@mui/material'
 import Page1 from './Page1';
-import Page2 from './Page1';
+import Page2 from './Page2';
+import Page3 from './Page3';
 import Timeline from './Timeline';
+import { useContext } from "react";
+import PageContext  from "../context/context";
 
 export default function  Main (){
+    const {pageNumber}=useContext(PageContext);
 
     return (
         <div
@@ -17,8 +21,9 @@ export default function  Main (){
             }}
         >
             <Timeline />
-            <Page1 />
-            <Page2 />
+            {pageNumber===0&&<Page1 />}
+            {pageNumber===1&&<Page2 />}
+            {pageNumber===2&&<Page3/>}
         </div>
     )
 }
