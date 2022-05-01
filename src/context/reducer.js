@@ -1,5 +1,6 @@
 import {
     PAGE_NUMBER,
+    UPDATE_NAME
 } from '../type'
 
 export default (state,action)=>{
@@ -10,6 +11,11 @@ export default (state,action)=>{
             return {
                 ...state,
                 pageNumber:state.pageNumber+1
+            }
+        case UPDATE_NAME:
+            return {
+                ...state,
+                name:action.payload
             }
 
         default:

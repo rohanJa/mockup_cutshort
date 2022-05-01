@@ -5,7 +5,7 @@ import { useContext } from "react";
 import PageContext  from "../context/context";
 
 export default function Page1 (){
-    const {updatePageNumber}=useContext(PageContext);
+    const {updatePageNumber,name,updateName}=useContext(PageContext);
 
     return (
         <div
@@ -27,10 +27,15 @@ export default function Page1 (){
                 </Typography>
             </div>
             <div>
-            <Typography variant="subtitle1" gutterBottom component="div">
-                Full Name
-            </Typography>
-            <TextField placeholder={'Steve Jobs'}  style={{width:'100%'}}/>
+                <Typography variant="subtitle1" gutterBottom component="div">
+                    Full Name
+                </Typography>
+                <TextField 
+                    placeholder={'Setve Jobs'}  
+                    style={{width:'100%'}} 
+                    value={name} 
+                    onChange={(e)=>{updateName(e.target.value)}}
+                />
             </div>
             <div>
             <Typography variant="subtitle1" gutterBottom component="div">
